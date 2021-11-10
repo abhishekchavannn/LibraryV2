@@ -1,0 +1,101 @@
+nav{
+    overflow: hidden;
+    background: #fff;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+  }
+  label.Logo{
+    font-family: 'Bukhari Script', sans-serif !important;
+    color: #211d63;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 10px 0 50px;
+    font-weight: bold;
+    float: left;
+    cursor: pointer;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: #787A91;
+    font-size: 17px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: 0.8s;
+    transition-timing-function: ease;
+  }
+.navItems{
+    font-weight:600;
+}
+  .navItems:hover{
+    font-family: 'Poppins', sans-serif;
+    color: #1E3163;
+    font-size: 120%;
+    
+  }
+
+  .burger{
+    font-size: 30px;
+    color: #1c1b29;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.Logo{
+      font-size: 30px;
+      padding-left: 100px;
+      float: none;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .burger{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #1c1b29;
+      top: 80px;
+      left: 100%;
+      text-align: center;
+      transition: all 0.8s ease-out;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #fff;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }

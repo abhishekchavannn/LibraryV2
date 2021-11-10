@@ -1,0 +1,106 @@
+
+/* Button styling */
+
+.deleteButton{
+    background-color: #d11a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.5s;
+    text-align: center;
+  }
+  
+  .deleteButton:hover{
+    background-color: #cc6d75;
+  
+  }
+  label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333149;
+  }
+  
+  .updateButton{
+    background-color: #000 ;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.5s;
+  }
+  .updateButton:hover{
+    background-color: #707070;
+   
+  }
+  .cancelButton{
+    background-color: #27004b;
+    padding: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  .cancelButton:hover{
+    background-color:#787A91;
+    color: #1c1b29;
+  }
+  .searchButton{
+    border: none;
+    color: #000;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 4px 2px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #555555;
+  }
+  .searchButton:hover{
+    background-color: #555555;
+    color: white;
+  }
+  .moreButton{
+    border: none;
+    color: #000;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 4px 2px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #ffe59f;
+  }
+  .moreButton:hover{
+    background-color: #f6ff00;
+    color:#1c1b29
+  }
+  .addButton{
+    border: none;
+    color: #7ec028;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+    border: 2px solid #7ec028;
+    height: 60px;
+  }
+  .addButton:hover{
+    background-color: #7ec028;
+    color: #000;
+  }

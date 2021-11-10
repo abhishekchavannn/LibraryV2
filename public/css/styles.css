@@ -1,0 +1,176 @@
+@import './buttons.css';
+@import './formBook.css';
+@import './navBar.css';
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+  
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+  .formItem{
+      position: relative;
+      text-align: center;
+      margin-top: 200px;
+  }
+  .formElement{
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  }
+
+input[type=text]{
+    width: 750px;
+    padding: 12px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    
+  }
+  .bookLabel{
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .bookLabel1{
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .buttonAddRow{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-end;
+  }
+
+ input:focus{
+   outline: none;
+ }
+  .errorMsg{
+      color: red;
+      padding-top: 100px;
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 700;
+  }
+  
+  .bookGrid{
+    display: grid;
+    position: relative;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    padding-top: 100px;
+    grid-gap: 50px 100px;
+    margin: auto 150px auto 150px;
+   
+  }
+.pageTitle{
+   padding-top: 150px;
+   text-align: center;
+   font-size: 4rem;
+   font-weight: bold;
+}
+.bookTitlesHead{
+    background-color:#1c1b29;
+    padding: 20px;
+    /* width: 30%; */
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.bookTitlesHead:hover{
+  background-color:#1c1b29;
+  padding: 22px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+  -webkit-box-shadow: 0px 3px 40px -5px rgba(0, 0, 0, 0.746);
+  -moz-box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+}
+.bookName{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.authorTable{
+  display: flex;
+  margin: 50px 250px 50px 250px;
+  justify-content: space-between;
+}
+hr{
+  width: 50%;
+  opacity: 0.4;
+  position: relative;
+  margin: auto;
+ 
+}
+.authorName{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.buttonRow{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.buttonRowShow{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+.pageHeader{
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+}
+.buttonAddRow{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+ 
+  
+}
+.formFields{
+  display: flex;
+  flex-direction: row;
+  margin: 0px 550px 50px 550px;
+  gap: 20px;
+  text-align: center;
+}
+
+.bookDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 500px 80px 500px; 
+  padding: 50px;
+  border-radius: 20px;
+  transition: 0.5s;
+  box-shadow: 0px 3px 40px -5px rgba(0, 0, 0, 0.274);
+  -webkit-box-shadow: 0px 3px 40px -5px rgba(0, 0, 0, 0.109);
+  -moz-box-shadow: 0px 3px 40px -5px rgba(0, 0, 0, 0.13);
+}
+.bookDetails:hover{
+  box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+  -webkit-box-shadow: 0px 3px 40px -5px rgba(0, 0, 0, 0.746);
+  -moz-box-shadow: 0px 3px 40px -5px rgba(0,0,0,0.68);
+}
+.detailsGrid{
+  display: grid;
+  position: relative;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-gap: 20px 30px;
+  
+}

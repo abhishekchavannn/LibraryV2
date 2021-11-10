@@ -1,0 +1,10 @@
+<h2 class="pageTitle">Author: <%= author.name %></h2>
+<div class="buttonRowShow">
+  <a class="updateButton" href="/authors/<%= author.id %>/edit">Update</a>
+  <%- include('../partials/deleteForm',
+              { url: `/authors/${author.id}` }) %>
+</div>
+<% if (booksByAuthor.length > 0) { %>
+  <h2 class="pageHeader">Books by author are show below:</h2>
+  <%- include('../partials/bookGrid', { books: booksByAuthor }) %>
+<% } %>

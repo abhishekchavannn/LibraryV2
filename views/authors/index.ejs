@@ -1,0 +1,25 @@
+<h2 class="pageTitle">Authors</h2>
+<form action="/authors" method="GET">
+  <div class="form-row">
+    <div class="formElement">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter author name ...."value="<%= searchOptions.name %>">
+      <button class="searchButton" type="submit">🔎 Search</button>
+    </div>
+  </div>
+ </form>
+<br>
+<% authors.forEach(author => { %>
+  <div class="authorTable">
+    <div class="authorName"><%= author.name %></div>
+    <div class="buttonRow">
+      <a class="moreButton" href="/authors/<%= author.id %>">More</a>
+      <a class="updateButton" href="/authors/<%= author.id %>/edit">Update</a>
+      <%- include('../partials/deleteForm',
+                  { url: `/authors/${author.id}` }) %>
+                
+    </div>
+    
+  </div>
+  <hr>
+<% }) %>

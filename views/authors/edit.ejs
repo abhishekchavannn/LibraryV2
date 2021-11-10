@@ -1,0 +1,10 @@
+<h2 class="pageTitle">Update Author</h2>
+<form action="/authors/<%= author.id %>?_method=PUT" method="POST">
+  <div class="formFields">
+    <%- include('_form_fields') %>
+    <div class="buttonAddRow">
+      <button class="updateButton" type="submit">Update</button>
+      <a class="cancelButton" href="/authors/<%= author.id %>">Back</a>
+      </div>
+  </div>
+</form>

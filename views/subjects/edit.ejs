@@ -1,0 +1,10 @@
+<h2 class="pageTitle">Edit Subject</h2>
+<form action="/subjects/<%= subject.id %>?_method=PUT" method="POST">
+  <div class="formFields">
+  <%- include('_form_fields') %>
+  <div class="buttonAddRow">
+    <button class="updateButton" type="submit">Update</button>
+    <a class="cancelButton" href="/subjects/<%= subject.id %>">Back</a>
+  </div>
+  </div>
+</form>

@@ -1,0 +1,56 @@
+<div class="bookFormContainer">
+  <div class="formTitleBook">
+    <div class="titleBook">
+    <label class="required">Book title</label>
+    <input type="text" placeholder="Enter the title of Book ....." name="title" value="<%= book.title %>">
+  </div>
+ 
+  <div class="titleBook">
+    <label class="required">Author</label>
+    <select name="author">
+      <% authors.forEach(author => { %>
+        <% if (author.id === book.author) { %>
+          <option selected label="<%= author.name %>" value="<%= author.id %>">
+        <% } else { %>
+          <option label="<%= author.name %>" value="<%= author.id %>">
+        <% } %>
+      <% }) %>
+    </select>
+  </div>
+</div>
+
+
+
+  <div class="bookContent">
+  <div class="titleBook">
+    <label class="required">Subject/Category</label>
+    <select name="subject">
+      <% subjects.forEach(subject => { %>
+        <% if (subject.id === book.subject) { %>
+          <option selected label="<%= subject.subjectName %>" value="<%= subject.id %>">
+        <% } else { %>
+          <option label="<%= subject.subjectName %>" value="<%= subject.id %>">
+        <% } %>
+      <% }) %>
+    </select>
+  </div>
+
+
+   <div class="titleBook">
+    <label class="required" >No. of Copies</label>
+    <input type="number" placeholder="Enter a number (minimum: 1)..." name="copyCount" min="1" value="<%= book.copyCount %>">
+  </div>
+  <div class="titleBook">
+    <label class="required" >Edition</label>
+    <input type="number" placeholder="Enter a number (minimum: 1)..." name="edition" min="1" value="<%= book.edition %>">
+  </div>
+
+</div>
+
+ <div class="textareaContainer">
+  <div class="titleBook">
+    <label>Preface / Summary</label>
+    <textarea name="description" placeholder="Enter the summary or about the book here...."><%= book.description %></textarea>
+  </div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<h2 class="pageTitle">Title: <%= book.title %></h2>
+<div class="bookDetails">
+ 
+    <div class="detailsGrid">
+      <div class="bookLabel">Author :</div>
+      <div  class="bookLabel1"><%= book.author.name %></div>
+      <div class="bookLabel">Subject :</div>
+      <div  class="bookLabel1"><%= sub.subjectName %></div>
+      <div class="bookLabel">Copies :</div>
+      <div  class="bookLabel1"><%= book.copyCount %></div>
+      <div class="bookLabel">Edition :</div>
+      <div  class="bookLabel1"><%= book.edition %></div>
+      <div class="bookLabel">Preface :</div>
+      <div  class="bookLabel1"><%= book.description %></div>
+    </div>
+   
+ 
+  <div class="buttonRowShow">
+    <a class="updateButton" href="/books/<%= book.id %>/edit">Update</a>
+    <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
+    <a class="cancelButton" href="/books">Back</a>
+    
+   
+  </div>
+
+
+
+ 
+</div>

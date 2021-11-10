@@ -1,0 +1,75 @@
+.formTitleBook{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.bookFormContainer{
+    margin: 20px 250px 50px 250px;
+
+}
+.buttonBook{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.textareaContainer{
+    margin-top: 20px;
+}
+.titleBook{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.bookContent{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+    margin-right: 400px;
+}
+.required:after {
+  content:" *";
+  color: red;
+}
+input[type=number]{
+    width: 345px;
+    padding: 12px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    
+  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+select{
+    width: 550px;
+    padding: 12px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 8px;
+    font-size: 1.3rem;
+  }
+  select:focus{
+    outline: none;
+  }
+  textarea{
+    font-family: 'Poppins',sans-serif;
+    width: 1330px;
+    padding: 12px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    resize: none;
+    height: 200px;
+  }
+  textarea:focus{
+    outline: none;
+  }
