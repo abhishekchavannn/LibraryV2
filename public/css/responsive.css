@@ -1,0 +1,38 @@
+@media (max-width: 942px){
+  
+    .bookGrid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+        padding: 100px 80px 80px 80px;
+    
+        grid-gap: 80px 100px;
+       }
+       .formElement{
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        }
+      .pageTitle{
+        padding-top: 150px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+     }
+     .bookTitlesHead{
+        display: flex;
+        flex-direction: column;
+          background-color:#1c1b29;
+          padding: 10px;
+          color: white;
+          border-radius: 20px;
+          transition: 0.3s;
+        
+      }
+      .bookName{
+        font-size: 1rem;
+        font-weight: 600;
+      }
+}
