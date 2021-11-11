@@ -1,20 +1,14 @@
-const express = require('express')
-const router = express.Router()
-const Book = require('../models/book')
-const Author = require('../models/author')
-router.get('/', async (req, res) => {
-  let books
-  let auth
+const express = require("express");
+const router = express.Router();
+const Book = require("../models/book");
+router.get("/", async (req, res) => {
+  let books;
   try {
-    
-    books = await Book.find().limit(10).exec()
-    auth = await Author.find(books.author).limit(10).exec()
-   
+    books = await Book.find();
   } catch {
-    books = []
-    auth = []
+    books = [];
   }
-  res.render('index', { books: books, auth: auth})
-})
+  res.render("index", { books: books });
+});
 
-module.exports = router
+module.exports = router;

@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
   } catch {
     res.render('subjects/add', {
       subject: subject,
-      errorMessage: 'Error creating Topic'
+      errorMessage: 'ERROR: Enter valid input'
     })
   }
 })
@@ -77,7 +77,7 @@ router.put('/:id', async (req, res) => {
     } else {
       res.render('subjects/edit', {
         subject: subject,
-        errorMessage: 'Error updating subject'
+        errorMessage: 'ERROR: Cannot update, please try again'
       })
     }
   }
@@ -85,11 +85,22 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   let subject
+  let subName 
   try {
     subject = await Subject.findById(req.params.id)
+    subName = await Book.find({
+      subject: subject
+    })
     await subject.remove()
     res.redirect('/subjects')
   } catch {
+    if (subName != 0) {
+      res.render('subjects/show', {
+        subject: subject,
+        booksBySubject: subName,
+        errorMessage: 'ERROR: You need to delete the books first'
+      })
+    }
     if (subject == null) {
       res.redirect('/')
     } else {

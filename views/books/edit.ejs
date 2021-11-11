@@ -1,6 +1,6 @@
 <h2 class="pageTitle">Edit Book</h2>
 <form action="/books/<%= book.id %>?_method=PUT" method="POST">
-  <%- include('_form_fields') %>
+  <%- include('formDetails') %>
   <div class="buttonBook">
     <button class="updateButton" type="submit"><i class="fas fa-user-edit"></i> Update</button>
     <a class="cancelButton" href="/books">Back</a>

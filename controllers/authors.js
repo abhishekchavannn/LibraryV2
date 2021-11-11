@@ -3,7 +3,7 @@ const router = express.Router()
 const Author = require('../models/author')
 const Book = require('../models/book')
 
-// All Authors Route
+// GET all authors list
 router.get('/', async (req, res) => {
   let searchOptions = {}
   if (req.query.name != null && req.query.name !== '') {
@@ -20,12 +20,12 @@ router.get('/', async (req, res) => {
   }
 })
 
-// New Author Route
+// add Author routing
 router.get('/add', (req, res) => {
   res.render('authors/add', { author: new Author() })
 })
 
-// Create Author Route
+// Add author (POST)
 router.post('/', async (req, res) => {
   const author = new Author({
     name: req.body.name
@@ -36,11 +36,11 @@ router.post('/', async (req, res) => {
   } catch {
     res.render('authors/add', {
       author: author,
-      errorMessage: 'Error creating Author'
+      errorMessage: 'ERROR: Enter valid input'
     })
   }
 })
-
+// Show author on search
 router.get('/:id', async (req, res) => {
   try {
     const author = await Author.findById(req.params.id)
@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
     res.redirect('/')
   }
 })
-
+// Update author details
 router.get('/:id/edit', async (req, res) => {
   try {
     const author = await Author.findById(req.params.id)
@@ -77,12 +77,12 @@ router.put('/:id', async (req, res) => {
     } else {
       res.render('authors/edit', {
         author: author,
-        errorMessage: 'Error updating Author'
+        errorMessage: 'ERROR: Cannot update, please try again'
       })
     }
   }
 })
-
+// Delete author details
 router.delete('/:id', async (req, res) => {
   let author
   let authName;

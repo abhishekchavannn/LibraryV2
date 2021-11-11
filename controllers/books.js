@@ -3,9 +3,9 @@ const router = express.Router();
 const Book = require('../models/book');
 const Author = require('../models/author');
 const Subject = require('../models/subject');
-const imageMimeTypes = ['image/png', 'image/jpeg', 'images/jpg',];
 
-// All Books Route
+
+// GET All the books
 router.get('/', async (req, res) => {
   let query = Book.find()
   if (req.query.title != null && req.query.title != '') {
@@ -23,29 +23,28 @@ router.get('/', async (req, res) => {
   }
 })
 
-// New Book Route
+// Calling the function to render the page
 router.get('/add', async (req, res) => {
-  renderNewPage(res, new Book())
+  renderPage(res, new Book())
 })
 
-// Create Book Route
+// POST the details (ADDING BOOKS)
 router.post('/', async (req, res) => {
   const book = new Book({
     title: req.body.title,
     author: req.body.author,
     subject: req.body.subject,
-    publishDate: new Date(req.body.publishDate),
     copyCount: req.body.copyCount,
     edition: req.body.edition,
     description: req.body.description
   })
-  saveCover(book, req.body.cover)
+
 
   try {
     const addBook = await book.save()
     res.redirect(`books/${addBook.id}`)
   } catch {
-    renderNewPage(res, book, true)
+    renderPage(res, book, true)
   }
 })
 
@@ -63,7 +62,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-// Edit Book Route
+// Update Book 
 router.get('/:id/edit', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id)
@@ -73,7 +72,6 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
-// Update Book Route
 router.put('/:id', async (req, res) => {
   let book
 
@@ -82,13 +80,9 @@ router.put('/:id', async (req, res) => {
     book.title = req.body.title
     book.author = req.body.author
     book.subject = req.body.subject
-    book.publishDate = new Date(req.body.publishDate)
     book.copyCount = req.body.copyCount
     book.edition = req.body.edition
     book.description = req.body.description
-    if (req.body.cover != null && req.body.cover !== '') {
-      saveCover(book, req.body.cover)
-    }
     await book.save()
     res.redirect(`/books/${book.id}`)
   } catch {
@@ -119,15 +113,15 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-async function renderNewPage(res, book, hasError = false) {
-  renderFormPage(res, book, 'add', hasError)
+async function renderPage(res, book, errorr = false) {
+  renderForm(res, book, 'add', errorr)
 }
 
-async function renderEditPage(res, book, hasError = false) {
-  renderFormPage(res, book, 'edit', hasError)
+async function renderEditPage(res, book, errorr = false) {
+  renderForm(res, book, 'edit', errorr)
 }
 
-async function renderFormPage(res, book, form, hasError = false) {
+async function renderForm(res, book, form, errorr = false) {
   try {
     const authors = await Author.find({})
     const subjects = await Subject.find({})
@@ -136,25 +130,16 @@ async function renderFormPage(res, book, form, hasError = false) {
       subjects:subjects,
       book: book
     }
-    if (hasError) {
+    if (errorr) {
       if (form === 'edit') {
-        params.errorMessage = 'Error Updating Book'
+        params.errorMessage = 'ERROR: Cannot update the details, try again'
       } else {
-        params.errorMessage = 'Error Creating Book'
+        params.errorMessage = 'ERROR: Fill the appropriate details'
       }
     }
     res.render(`books/${form}`, params)
   } catch {
     res.redirect('/books')
-  }
-}
-
-function saveCover(book, coverEncoded) {
-  if (coverEncoded == null) return
-  const cover = JSON.parse(coverEncoded)
-  if (cover != null && imageMimeTypes.includes(cover.type)) {
-    book.coverImage = new Buffer.from(cover.data, 'base64')
-    book.coverImageType = cover.type
   }
 }
 

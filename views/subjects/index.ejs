@@ -15,7 +15,7 @@
     <div class="buttonRow">
       <a class="moreButton" href="/subjects/<%= subject.id %>">Related books</a>
       <a class="updateButton" href="/subjects/<%= subject.id %>/edit"><i class="fas fa-user-edit"></i> Update</a>
-      <%- include('../partials/deleteForm',
+      <%- include('../components/deleteUser',
                   { url: `/subjects/${subject.id}` }) %>
     </div>
   </div>

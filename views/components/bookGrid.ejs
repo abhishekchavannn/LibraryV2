@@ -1,4 +1,4 @@
-<% bookGridClass = locals.large ? 'book-grid-large' : '' %>
+<% bookGridClass %>
 <div class="bookGrid <%= bookGridClass %>">
   <% books.forEach(book => { %>
   <a href="/books/<%= book.id %>">
