@@ -3,7 +3,8 @@
   <% books.forEach(book => { %>
   <a href="/books/<%= book.id %>">
     <div class="bookTitlesHead">
-      <div class="bookName">📔 <%= book.title%></div>
+      <div class="coverIcon"><i class="fas fa-book"></i></div>
+      <div class="bookName"> <%= book.title%></div>
       Copies Available : <%= book.copyCount %>
     </div>
   </a>

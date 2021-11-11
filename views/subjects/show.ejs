@@ -1,6 +1,6 @@
 <h2 class="pageTitle">Category: <%= subject.subjectName %></h2>
 <div class="buttonRowShow">
-  <a class="updateButton" href="/subjects/<%= subject.id %>/edit">Update</a>
+  <a class="updateButton" href="/subjects/<%= subject.id %>/edit"><i class="fas fa-user-edit"></i> Update</a>
   <%- include('../partials/deleteForm',
               { url: `/subjects/${subject.id}` }) %>
 </div>

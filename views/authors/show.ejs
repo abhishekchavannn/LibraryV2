@@ -1,6 +1,6 @@
 <h2 class="pageTitle">Author: <%= author.name %></h2>
 <div class="buttonRowShow">
-  <a class="updateButton" href="/authors/<%= author.id %>/edit">Update</a>
+  <a class="updateButton" href="/authors/<%= author.id %>/edit"><i class="fas fa-user-edit"></i> Update</a>
   <%- include('../partials/deleteForm',
               { url: `/authors/${author.id}` }) %>
 </div>

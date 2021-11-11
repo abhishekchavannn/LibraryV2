@@ -1,0 +1,33 @@
+footer{
+    margin-top: 150px;
+}
+@media(max-width: 400px){
+    #footer{
+      padding: 4% 4%;
+   }
+   }
+   
+   #footer {
+       padding: 4% 13%;
+       text-align: center;
+     }
+     
+     .foot {
+       background-color:#151320;
+     }
+     .social {
+       padding: 20px 10px;
+       color: white;
+       cursor: pointer;
+       transition: 0.5 ease;
+     }
+     
+     .social:hover {
+       color: #A7C4BC;
+     }
+   
+   .main-grid{
+     display: flex;
+     flex-direction: row;
+   }
+   
