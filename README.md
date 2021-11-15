@@ -1,4 +1,4 @@
-# LibraryV2
+# Library
 Minor coursework assignment of a MVC library where an admin can add, edit, delete books, author, and subject details. 
 
 ### `Setup .env`
